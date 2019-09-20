@@ -270,7 +270,8 @@ framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA,
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CHD", years = 10)
 ```
 
@@ -293,7 +294,8 @@ framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA,
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
 
@@ -315,7 +317,8 @@ framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA,
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
 
@@ -339,7 +342,8 @@ framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female"
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA,
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CHD", years = 10)
 ```
 
@@ -361,7 +365,8 @@ framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female"
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA,
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
 
@@ -383,7 +388,8 @@ framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female"
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA, 
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22, Ethnicity = NA),
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+                                   Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
 
@@ -392,3 +398,51 @@ framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female"
 | InternalID|     frisk|friskHI |
 |----------:|---------:|:-------|
 |          3| 0.1500842|NA      |
+
+## Example 4
+
+This comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population" by Andrew M Tonkin, Andrew N Boyden and Stephen Colagiuri in 'Medical Journal of Australia' (191:6) 21 September 2009.
+
+Using the provided Australian cardiovascular risk charts, the estimated risk is $5-9\%$.
+
+
+```r
+framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
+                                   Age = 46, SmokingStatus = "Smoker",
+                                   CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
+                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+                                   eGFRValue = NA, eGFRUnits = NA, 
+                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = NA,
+                                   Ethnicity = NA),
+                        outcome = "CVD", years = 5)
+```
+
+
+
+| InternalID|     frisk|friskHI |
+|----------:|---------:|:-------|
+|          4| 0.0886549|NA      |
+
+This example also comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population" by Andrew M Tonkin, Andrew N Boyden and Stephen Colagiuri in 'Medical Journal of Australia' (191:6) 21 September 2009.
+
+Using the provided Australian cardiovascular risk charts, the estimated risk is $20-24\%$.
+
+
+```r
+framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
+                                   Age = 66, SmokingStatus = "Smoker",
+                                   CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
+                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+                                   eGFRValue = NA, eGFRUnits = NA, 
+                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = NA,
+                                   Ethnicity = NA),
+                        outcome = "CVD", years = 5)
+```
+
+
+
+| InternalID|     frisk|friskHI |
+|----------:|---------:|:-------|
+|          4| 0.1968354|NA      |
