@@ -31,6 +31,8 @@ knitr::opts_chunk$set(
 library(printr)
 ```
 
+Github repository at https://github.com/DavidPatShuiFong/framinghamRiskEquation
+
 ```{r setup}
 library(framinghamRiskEquation)
 packageVersion("framinghamRiskEquation")
@@ -204,6 +206,8 @@ This comes from "Maximising the effectiveness and cost-effectiveness of cardiova
 
 Using the provided Australian cardiovascular risk charts, the estimated risk is $5-9\%$.
 
+The online calculator cvdcheck.org.au (with total cholesterol = 7.2, HDL 1.0) reports $9\%$.
+
 ```{r}
 framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
                                    Age = 46, SmokingStatus = "Smoker",
@@ -219,6 +223,8 @@ framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female"
 This example also comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population" by Andrew M Tonkin, Andrew N Boyden and Stephen Colagiuri in 'Medical Journal of Australia' (191:6) 21 September 2009.
 
 Using the provided Australian cardiovascular risk charts, the estimated risk is $20-24\%$.
+
+The online calculator cvdcheck.org.au (with total cholesterol = 7.2, HDL 1.0) reports $20\%$. 
 
 ```{r}
 framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
