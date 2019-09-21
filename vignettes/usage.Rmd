@@ -101,7 +101,7 @@ framingham_riskequation(data.frame(InternalID = 1, BP = "135/80", Sex = "Male",
 
 ## Example 2
 
-This comes from "An Updated Coronary Risk Profile" (Anderson 1991)'.
+This comes from "An Updated Coronary Risk Profile" (Anderson 1991).
 
 The worked answer in the paper is $0.192$.
 
