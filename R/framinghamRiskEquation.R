@@ -18,7 +18,7 @@
 #'   http://www.cvdcheck.org.au/pdf/Absolute_CVD_Risk_Full_Guidelines.pdf
 #' \item {"Cardiovascular Disease Risk Profiles"}
 #'   by Keaven M. Anderson, Patricia M. Odell, Peter W.F. Wilson, William B. Kannel
-#'   in American Heart Journal : 1991; 121:293-298
+#'   in 'American Heart Journal' 1991; 121:293-298
 #' \item {"An Updated Coronary Risk Profile - A Statement for Health Professionals"}
 #'   by Keaven M. Anderson, Peter W.F. Wilson, Patricia M. Odell, William B. Kannel
 #'   in AHA (American Heart Association) Medical/Scientific Statement, sourced from http://ahajournals.org
@@ -27,21 +27,18 @@
 #' @param df a dataframe, which must include the following columns/fields:
 #'
 #' \itemize{
-#' \item InternalID (numeric)
+#' \item InternalID (numeric) case identifier
 #' \item CardiovascularDisease (logical - TRUE or FALSE)
 #' \item Diabetes (logical)
-#' \item SmokingDate (date) - not actually used in this equation
 #' \item SmokingStatus (character) - "Smoker" if a smoker. All other values ignored
 #' \item UrineAlbuminDate (character), UrineAlbuminValue (double), UrineAlbuminUnit (character)
 #' \item PersistentProteinuria (logical)
 #' \item eGFRDate (date), eGFRValue (double), eGFRUnits (character)
 #' \item FamilialHypercholesterolaemia (logical)
 #' \item LVH (logical) = left ventricular hyp0ertrophy
-#' \item CholesterolDate (date)
 #' \item Cholesterol (double) in millimoles per litre (mmol/L or mM)
 #' \item Triglycerides (double) in millimoles per litre (mmol/L or mM)
 #' \item CholHDLRatio (double)
-#' \item BPDate (date)
 #' \item BP (character, two numbers separated by "/") in mmHg
 #' \item Sex (character) "Female" or not
 #' \item Ethnicity (character) "Aboriginal", "Torres Strait Islander", "Aboriginal/Torres Strait Islander" or not
@@ -49,7 +46,9 @@
 #' }
 #'
 #' @param years number of years to predict (from 4 to 12). default is 5 years.
-#' @param outcome (default is "CVD") "CHD" - coronary heart disease. includes myocardial
+#' @param outcome (default is "CVD")
+#'
+#'  "CHD" - coronary heart disease. includes myocardial
 #'  infarction, death from coronary heart disease plus angina pectoris and
 #'  coronary insufficiency.
 #'

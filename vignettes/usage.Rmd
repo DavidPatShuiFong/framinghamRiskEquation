@@ -82,7 +82,7 @@ framingham_riskequation(data.frame(InternalID = 1, BP = "135/80", Sex = "Female"
 
 ```
 
-The same risk-factors except Sex = "Male" with outcome = "CVD" and years = 5 returns $0.202$.
+The same risk-factors except Sex = "Male" with outcome = "CVD" and years = 5.
 
 The online calculator on cvdcheck.org.au reports $20\%$.
 
@@ -215,12 +215,12 @@ framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female"
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA, 
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = NA,
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
                                    Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
 
-This example also comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population" by Andrew M Tonkin, Andrew N Boyden and Stephen Colagiuri in 'Medical Journal of Australia' (191:6) 21 September 2009.
+This example also comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population".
 
 Using the provided Australian cardiovascular risk charts, the estimated risk is $20-24\%$.
 
@@ -233,7 +233,7 @@ framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female"
                                    CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
                                    eGFRValue = NA, eGFRUnits = NA, 
                                    UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = NA,
+                                   FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
                                    Ethnicity = NA),
                         outcome = "CVD", years = 5)
 ```
