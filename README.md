@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/DavidPatShuiFong/framinghamRiskEquation.svg?branch=develop)](https://travis-ci.org/DavidPatShuiFong/framinghamRiskEquation)
 
+[![Codecov test coverage](https://codecov.io/gh/DavidPatShuiFong/framinghamRiskEquation/branch/master/graph/badge.svg)](https://codecov.io/gh/DavidPatShuiFong/framinghamRiskEquation?branch=master)
+
 Github repository at
 <a href="https://github.com/DavidPatShuiFong/framinghamRiskEquation" class="uri">https://github.com/DavidPatShuiFong/framinghamRiskEquation</a>
 

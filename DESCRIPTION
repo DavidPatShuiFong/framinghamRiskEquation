@@ -19,7 +19,9 @@ Imports:
   pipeR
 RoxygenNote: 7.1.0.9000
 Suggests: 
-  knitr,
-  rmarkdown,
-  printr
+    knitr,
+    rmarkdown,
+    printr,
+    testthat,
+    covr
 VignetteBuilder: knitr
