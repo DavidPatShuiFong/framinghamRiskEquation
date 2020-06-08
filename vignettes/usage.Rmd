@@ -19,8 +19,10 @@ output:
     highlight: vignette
     toc: yes
     toc_depth: 4
-vignette: |
-  %\VignetteIndexEntry{Usage} %\VignetteEncoding{UTF-8} %\VignetteEngine{knitr::rmarkdown}
+vignette: >
+  %\VignetteIndexEntry{Usage} 
+  \usepackage[utf8]{inputenc} 
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r, include = FALSE}
