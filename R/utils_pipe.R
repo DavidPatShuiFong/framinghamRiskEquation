@@ -5,5 +5,5 @@
 #' @keywords internal
 #' @export
 #' @importFrom pipeR %>>%
-#' @usage lhs \%>>\% rhs
+#' @usage x \%>>\% expr
 NULL
