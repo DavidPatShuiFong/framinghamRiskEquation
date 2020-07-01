@@ -1,7 +1,7 @@
 Package: framinghamRiskEquation
 Type: Package
 Title: Framingham Risk Equation calculator
-Version: 0.1.0
+Version: 1.0.1
 Authors@R: person("David", "Fong", email = "vkelim@bigpond.com", role = c("aut", "cre"))
 Maintainer: David P.S. Fong <vkelim@bigpond.com>
 Description: Calculate cardiovascular and coronary heart disease risk
