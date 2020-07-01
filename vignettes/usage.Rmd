@@ -1,8 +1,11 @@
 ---
 title: "framinghamRiskEquation"
-author: "David Fong : vkelim at bigpond dot com"
+author: 'David Fong : vkelim at bigpond dot com'
 date: "`r Sys.Date()`"
 output:
+  rmarkdown::html_vignette: NULL
+  md_document:
+    variant: markdown_github
   html_document:
     number_sections: yes
     theme: lumen
@@ -11,12 +14,15 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  rmarkdown::html_vignette: NULL
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: vignette
+    toc: yes
+    toc_depth: 4
 vignette: >
-  %\VignetteIndexEntry{Usage}
+  %\VignetteIndexEntry{Usage} 
+  \usepackage[utf8]{inputenc} 
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
-
 ---
 
 ```{r, include = FALSE}
@@ -53,16 +59,17 @@ This example comes from "Cardiovascular disease risk profiles" (Anderson 1991).
 The worked answer in the paper is $0.22$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 1, BP = "135/80", Sex = "Female",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
-                                   Ethnicity = NA),
-                        outcome = "CHD", years = 10)
-
+framingham_riskequation(
+  data.frame(InternalID = 1, BP = "135/80", Sex = "Female",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
+             Ethnicity = NA),
+  outcome = "CHD", years = 10
+)
 ```
 
 The same risk-factors with outcome = "CVD" and years = 5.
@@ -70,16 +77,17 @@ The same risk-factors with outcome = "CVD" and years = 5.
 The calculator on cvdcheck.org.au reports $18\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 1, BP = "135/80", Sex = "Female",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
-
+framingham_riskequation(
+  data.frame(InternalID = 1, BP = "135/80", Sex = "Female",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 The same risk-factors except Sex = "Male" with outcome = "CVD" and years = 5.
@@ -87,16 +95,17 @@ The same risk-factors except Sex = "Male" with outcome = "CVD" and years = 5.
 The online calculator on cvdcheck.org.au reports $20\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 1, BP = "135/80", Sex = "Male",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
-
+framingham_riskequation(
+  data.frame(InternalID = 1, BP = "135/80", Sex = "Male",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 230/48, Diabetes = TRUE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 5.96,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 ## Example 2
@@ -106,15 +115,17 @@ This comes from "An Updated Coronary Risk Profile" (Anderson 1991).
 The worked answer in the paper is $0.192$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CHD", years = 10)
+framingham_riskequation(
+  data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CHD", years = 10
+)
 ```
 
 
@@ -123,15 +134,17 @@ The same risk-factors with outcome = "CVD" and years = 5.
 The online calculator at cvdcheck.org.au reports $13\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 The same risk-factors except LVH = TRUE (outcome = CVD, years = 5).
@@ -139,15 +152,17 @@ The same risk-factors except LVH = TRUE (outcome = CVD, years = 5).
 The online calculator at cvdcheck.org.au reports $21\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = TRUE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 2, BP = "130/80", Sex = "Male",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = TRUE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 ## Example 3
@@ -157,15 +172,17 @@ This comes from "An Updated Coronary Risk Profile" (Anderson 1991)
 The worked answer in the paper is $0.135$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CHD", years = 10)
+framingham_riskequation(
+  data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CHD", years = 10
+)
 ```
 
 The same risk-factors with outcome = "CVD" and years = 5.
@@ -173,15 +190,17 @@ The same risk-factors with outcome = "CVD" and years = 5.
 The online calculator cvdcheck.org.au reports $9\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA,
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA,
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 The same risk-factors except LVH = TRUE (outcome = CVD, years = 5).
@@ -189,15 +208,17 @@ The same risk-factors except LVH = TRUE (outcome = CVD, years = 5).
 The online calculator cvdcheck.org.au reports $15\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
-                                   Age = 55, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 240/45, Diabetes = FALSE, LVH = TRUE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA, 
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 3, BP = "130/80", Sex = "Female",
+             Age = 55, SmokingStatus = "Smoker",
+             CholHDLRatio = 240/45, Diabetes = FALSE, LVH = TRUE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA, 
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 6.22,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 ## Example 4
@@ -209,15 +230,17 @@ Using the provided Australian cardiovascular risk charts, the estimated risk is 
 The online calculator cvdcheck.org.au (with total cholesterol = 7.2, HDL 1.0) reports $9\%$.
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
-                                   Age = 46, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA, 
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
+             Age = 46, SmokingStatus = "Smoker",
+             CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA, 
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```
 
 This example also comes from "Maximising the effectiveness and cost-effectiveness of cardiovascular disease prevention in the general population".
@@ -227,13 +250,15 @@ Using the provided Australian cardiovascular risk charts, the estimated risk is 
 The online calculator cvdcheck.org.au (with total cholesterol = 7.2, HDL 1.0) reports $20\%$. 
 
 ```{r}
-framingham_riskequation(data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
-                                   Age = 66, SmokingStatus = "Smoker",
-                                   CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
-                                   CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
-                                   eGFRValue = NA, eGFRUnits = NA, 
-                                   UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
-                                   FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
-                                   Ethnicity = NA),
-                        outcome = "CVD", years = 5)
+framingham_riskequation(
+  data.frame(InternalID = 4, BP = "140/80", Sex = "Female",
+             Age = 66, SmokingStatus = "Smoker",
+             CholHDLRatio = 7.2, Diabetes = FALSE, LVH = FALSE,
+             CardiovascularDisease = FALSE, PersistentProteinuria = FALSE,
+             eGFRValue = NA, eGFRUnits = NA, 
+             UrineAlbuminValue = NA, UrineAlbuminUnits = NA,
+             FamilialHypercholesterolaemia = NA, Cholesterol = 7.2,
+             Ethnicity = NA),
+  outcome = "CVD", years = 5
+)
 ```

@@ -1,25 +1,27 @@
 Package: framinghamRiskEquation
 Type: Package
 Title: Framingham Risk Equation calculator
-Version: 0.1.0
-Author: David P.S. Fong
+Version: 1.0.1
+Authors@R: person("David", "Fong", email = "vkelim@bigpond.com", role = c("aut", "cre"))
 Maintainer: David P.S. Fong <vkelim@bigpond.com>
 Description: Calculate cardiovascular and coronary heart disease risk
-    profiles as per "Cardiovascular Disease Risk Profiles" by
-    Keaven M. Anderson, Patricia M. Odell, Peter W.F. Wilson, William B. Kannel
-    (American Heart Journal : 1991; 121:293-298).
-    and "Guidelines for the management of Absolute cardiovascular disease risk"
-    (2012) by the National Vascular Disease Prevention Alliance (Australia)
-License: Mozilla Public License 2.0
+  profiles as per "Cardiovascular Disease Risk Profiles" by
+  Keaven M. Anderson, Patricia M. Odell, Peter W.F. Wilson, William B. Kannel
+  (American Heart Journal : 1991; 121:293-298)
+  and "Guidelines for the management of Absolute cardiovascular disease risk"
+  (2012) by the National Vascular Disease Prevention Alliance (Australia).
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
-    dplyr,
-    tidyr,
-    pipeR
-RoxygenNote: 6.1.1
+  dplyr,
+  tidyr,
+  pipeR
+RoxygenNote: 7.1.0.9000
 Suggests: 
     knitr,
     rmarkdown,
-    printr
+    printr,
+    testthat,
+    covr
 VignetteBuilder: knitr
